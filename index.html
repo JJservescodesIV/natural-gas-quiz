@@ -194,8 +194,56 @@
                 options: ["1997", "2000", "1993", "1985"],
                 answer: "1997"
             }
+{
+question: "Which of the following is a benefit of using natural gas as an energy source?",
+options: ["Lower greenhouse gas emissions", "Abundant supply", "Relatively low cost", "All of the above"],
+answer: "All of the above"
+}
+
+{
+question: "What is the process of extracting natural gas from underground reservoirs called?",
+options: ["Fracking", "Refining", "Liquefaction", "Compression"],
+answer: "Fracking"
+}
+
+{
+question: "Which of the following is a major challenge facing the natural gas industry?",
+options: ["Fluctuating prices", "Environmental concerns", "Infrastructure development", "All of the above"],
+answer: "All of the above"
+}
+
+{
+question: "What is the name of the process used to convert natural gas into a liquid form for easier transportation and storage?",
+options: ["Liquefaction", "Compression", "Refining", "Cracking"],
+answer: "Liquefaction"
+}
+
+{
+question: "Which of the following is a major application of natural gas in the industrial sector?",
+options: ["Heating and cooling", "Electricity generation", "Chemical production", "All of the above"],
+answer: "All of the above"
+}
+            
         ];
 
+        // Function to shuffle the order of the questions
+function shuffleQuestions(questions) {
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
+  return questions;
+}
+
+// Function to shuffle the order of the options within each question
+function shuffleOptions(question) {
+  for (let i = question.options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [question.options[i], question.options[j]] = [question.options[j], question.options[i]];
+  }
+  return question;
+}
+ 
         let currentQuestionIndex = 0;
         let score = 0;
 
