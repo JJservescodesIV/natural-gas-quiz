@@ -179,7 +179,19 @@
     </footer>
 
     <script>
-        const questions = [
+        const questions = [ 
+            
+            function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+            questions = shuffleArray(questions);
+loadQuestion();
+
             {
                 question: "What type of energy source is natural gas classified as?",
                 options: ["Renewable", "Non-renewable", "Nuclear", "Hydroelectric"],
