@@ -226,24 +226,7 @@ answer: "All of the above"
             
         ];
 
-        // Function to shuffle the order of the questions
-function shuffleQuestions(questions) {
-  for (let i = questions.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [questions[i], questions[j]] = [questions[j], questions[i]];
-  }
-  return questions;
-}
-
-// Function to shuffle the order of the options within each question
-function shuffleOptions(question) {
-  for (let i = question.options.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [question.options[i], question.options[j]] = [question.options[j], question.options[i]];
-  }
-  return question;
-}
- 
+       
         let currentQuestionIndex = 0;
         let score = 0;
 
