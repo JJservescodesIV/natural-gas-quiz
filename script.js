@@ -64,6 +64,14 @@ const confettiContainer = document.getElementById("confetti-container");
 
 const COLORS = ["#f94144", "#f3722c", "#f9c74f", "#90be6d", "#577590", "#43aa8b"];
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 function loadQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
@@ -72,7 +80,8 @@ function loadQuestion() {
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
     progressBar.style.width = `${progress}%`;
 
-    currentQuestion.options.forEach(option => {
+    const shuffledOptions = shuffleArray([...currentQuestion.options]);
+    shuffledOptions.forEach(option => {
         const button = document.createElement("button");
         button.textContent = option;
         button.addEventListener("click", () => checkAnswer(option));
@@ -117,6 +126,7 @@ function showScore() {
 function restartQuiz() {
     currentQuestionIndex = 0;
     score = 0;
+    shuffleArray(questions);
     quizContainer.style.display = "block";
     scoreContainer.style.display = "none";
     progressBar.style.width = "0%";
@@ -140,4 +150,6 @@ function getRandomColor() {
     return COLORS[Math.floor(Math.random() * COLORS.length)];
 }
 
+// Initial shuffle and load
+shuffleArray(questions);
 loadQuestion();
