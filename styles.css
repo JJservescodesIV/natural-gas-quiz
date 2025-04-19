@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f9;
+    background: linear-gradient(135deg, #f4f4f9, #e0e0e0);
     color: #333;
     display: flex;
     align-items: center;
@@ -15,16 +15,19 @@ body {
     width: 90%;
     background: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
+    border: 2px solid #0077cc;
 }
 
 h1 {
     text-align: center;
     color: #0077cc;
     margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .progress-bar-container {
@@ -44,9 +47,10 @@ h1 {
 }
 
 .question {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 20px;
     text-align: center;
+    color: #555;
 }
 
 .options {
@@ -60,19 +64,20 @@ h1 {
 
 .options button {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     background: #0077cc;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 7px;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .options button:hover {
     background: #005fa3;
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .options button.correct {
@@ -89,25 +94,27 @@ h1 {
 }
 
 .score {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 20px 0;
     color: #0077cc;
+    font-weight: bold;
 }
 
 .btn-restart {
     margin-top: 20px;
     display: inline-block;
     width: auto;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background: #0077cc;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 7px;
+    font-size: 1.1rem;
     text-align: center;
     cursor: pointer;
     text-decoration: none;
     transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-restart:hover {
